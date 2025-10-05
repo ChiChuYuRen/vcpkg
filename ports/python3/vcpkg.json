@@ -1,7 +1,7 @@
 {
   "name": "python3",
   "version": "3.12.9",
-  "port-version": 1,
+  "port-version": 7,
   "description": "The Python programming language",
   "homepage": "https://github.com/python/cpython",
   "license": "Python-2.0",
@@ -75,18 +75,30 @@
           "default-features": false
         },
         {
+          "name": "ncurses",
+          "platform": "!windows | mingw"
+        },
+        {
           "name": "openssl",
           "default-features": false
         },
         {
           "name": "sqlite3",
           "default-features": false
+        },
+        {
+          "name": "vcpkg-pkgconfig-get-modules",
+          "host": true,
+          "platform": "windows & !mingw"
         }
       ]
     },
     "readline": {
-      "description": "Build with readline. Requires system readline to be installed",
-      "supports": "!windows"
+      "description": "Build with readline.",
+      "supports": "!windows",
+      "dependencies": [
+        "readline"
+      ]
     }
   }
 }
